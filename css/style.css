@@ -5,8 +5,7 @@
     --color-secondary: #00d9ff;
     --color-accent: #ff3400;
     --color-headings: #1b0760;
-    --color-body: #918ca4;
-}
+    --color-body: #918ca4;}
 
 /* -------- Typography -------- */
 html {font-size: 62.5%;}
@@ -15,59 +14,45 @@ body {
     font-family: inter, Arial, Helvetica, sans-serif;
     color: var(--color-body);
     font-size: 2.4rem; /*on mobile the font-size is 24px*/
-    line-height: 1.5;
-}
+    line-height: 1.5;}
 
 h1, h2, h3 {
     color: var(--color-headings);
-    margin-bottom: 1rem; /*the font imported include margin around it, therefor we use a smaller size font*/
-}
+    margin-bottom: 1rem; /*the font imported include margin around it, therefor we use a smaller size font*/}
 
 h1 {font-size: 7rem;}
 h2 {font-size: 4rem;}
 h3 {font-size: 3rem;}
-p {
-    margin: 0;
-}
+p {margin: 0;}
 
 @media screen and (min-width: 1024px) {
 
     body {font-size: 1.8rem;}
     h1 {font-size: 8rem;}
     h2 {font-size: 4rem;}
-    h3 {font-size: 2.4rem;}
-    
-}
+    h3 {font-size: 2.4rem;}}
 
 /* -------- Links -------- */
-a {
-    text-decoration: none;
-}
+a {text-decoration: none;}
 
 .link-arrow {
     color: var(--color-accent);
     text-transform: uppercase;
     font-size: 2rem;
-    font-weight: bold;
-}
+    font-weight: bold;}
 
 .link-arrow::after {
     content: "-->";
     margin-left: 5px;
-    transition: margin 0.15s; /* notice this transition */
-}
+    transition: margin 0.15s; /* notice this transition */}
 
 .link-arrow:hover::after { /* this CSS code is difficult */
-    margin-left: 10px;
-}
+    margin-left: 10px;}
 
 @media screen and (min-width: 1024px) {
     
     .link-arrow {
-        font-size: 1.5rem;
-    }
-    
-}
+        font-size: 1.5rem;}}
 
 /* -------- Badges -------- */
 .badge {                /* OOP, seperate Structure from Skin: this is Structure */
@@ -75,20 +60,16 @@ a {
     font-size: 2rem;
     font-weight: 600;
     padding: 0.5rem 2rem;
-    white-space: nowrap; /*extends the line*/
-}
+    white-space: nowrap; /*extends the line*/}
 
 .badge--primary { /*BEM Convention: block__element--modifier: block--modifier*/
     background: var(--color-primary);
-    color: #fff;
-}
+    color: #fff;}
 .badge--secondary {
     background: var(--color-secondary);
-    color: #fff;
-}
+    color: #fff;}
 .badge--small {
-    font-size: 1.6rem;
-}
+    font-size: 1.6rem;}
 
 @media screen and (min-width: 1024px) {
 
@@ -96,7 +77,30 @@ a {
         font-size: 1.5rem;
     }
     .badge--small {
-        font-size: 1.2rem;
-    }
+        font-size: 1.2rem;}}
 
+/* -------- Lists -------- */
+.list {
+    list-style: none;
+    padding-left: 0;
+    color: var(--color-headings);
+    /* font-weight: bold; */ /* bold should be applied where required */}
+
+.list--inline .list__item {
+    display: inline-block;
+    margin-right: 2rem;}
+
+.list--tick {
+    list-style-image: url(../images/tick.svg);
+    padding-left: 3rem;}
+
+.list--tick .list__item { /*good use of nestting: both criteria has to be met*/
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;}
+
+@media screen and (min-width: 1024px) {
+
+    .list--tick .list__item {
+        padding-left: 0;
+    }
 }
