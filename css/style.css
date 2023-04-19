@@ -5,9 +5,13 @@
     --color-secondary: #00d9ff;
     --color-accent: #ff3400;
     --color-headings: #1b0760;
-    --color-body: #918ca4;}
+    --color-body: #918ca4;
+    --color-border: #ccc;
+    --border-radius: 30px;}
 *, *::after, *::before {
     box-sizing: border-box;}
+::placeholder {
+    color: #cdcbd7;}
 
 /* -------- Typography -------- */
 html {font-size: 62.5%;}
@@ -111,9 +115,7 @@ a {text-decoration: none;}
 .icon {
     width: 40px;
     height: 40px;}
-.icon--primary {
-    fill: var(--color-primary);
-}
+
 .icon-container { /* we used here "-" to seperate words. BTW the span element is for background color*/
     background: #f3f9fa;
     width: 64px;
@@ -123,6 +125,10 @@ a {text-decoration: none;}
     justify-content: center; /* horizontal */
     align-items: center; /* vertical */
 }
+    
+.icon--primary {fill: var(--color-primary);}
+.icon--accent {fill: var(--color-accent);}
+
 
 /* -------- Buttons -------- */
 .btn {
@@ -163,3 +169,30 @@ a {text-decoration: none;}
 
     .btn {font-size: 1.5rem;}}
 
+/* -------- Inputs -------- */
+.input {
+    padding: 1.5rem 3.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    outline: 0;
+    color: var(--color-headings);
+    font-size: 2rem;
+}
+.input-group {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    display: flex; /*to push the search button to far right, good nestting*/
+}
+.input-group .input { /* Good use of nestting, only input inside an input-group should not have borders*/
+    border: 0;
+    flex-grow: 1;
+    padding: 1.5rem 1rem;
+}
+.input-group .btn {margin: 4px;}
+.input-group .icon-container {margin: 4px;}
+
+@media screen and (min-width: 1024px) {
+
+    .input {
+        font-size: 1.5rem;
+    }}
