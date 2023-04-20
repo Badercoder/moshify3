@@ -13,11 +13,41 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <div class="grid grid--1x2 grid--1x3">
-        <div style="height: 100px; background: tomato;"></div>
-        <div style="height: 100px; background: dodgerblue;"></div>
-        <div style="height: 100px; background: springgreen;"></div>
+<body style="padding: 5rem;">
+    <div class="card testimonial">
+        <div class="grid grid--1x2">
+
+            <!-- Column 1 -->
+            <div class="testimonial__image">
+                <img src="images/testimonial.jpg" alt="A happy, smiling customer">
+                <span class="icon-container icon-container--accent">
+                    <svg class="icon--small icon--white">
+                        <use xlink:href="images/sprite.svg#quotes"></use>
+                    </svg>
+                </span>
+            </div>
+
+            <!-- Column 2 -->
+            <blockquote class="quote testimonial__quote">
+                <p class="quote__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla rem cum voluptatibus. Vel incidunt accusamus repellendus commodi facere molestiae illum.</p>
+                <footer> <!-- Media component is also part of the testimonials section -->
+                    <div class="media">
+                        <div class="media__image">
+                            <svg class="icon icon--primary testimonial__quote-line"> <!-- the reason for adding quote__line is to seperate the elements of the quote component-->
+                                <use xlink:href="images/sprite.svg#line"></use>
+                            </svg>
+                        </div>
+                        <div class="media__body">
+                            <h3 class="media__title testimonial__author">
+                                John Smith
+                            </h3>
+                            <p class="testimonial__organisation">ABC Company</p>
+                        </div>
+                    </div>
+                </footer>
+            </blockquote>
+            
+        </div>
     </div>
 
     <script src="/index.js"></script>
