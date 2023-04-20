@@ -144,6 +144,9 @@ a {text-decoration: none;}
 .btn--outline:hover {
     background: var(--color-headings);
     color: #fff;}
+.btn--horizontal {
+    padding-left: 6rem;
+    padding-right: 6rem;}
 .btn--primary {
     background: var(--color-primary);
     color: #fff;}
@@ -300,3 +303,25 @@ a {text-decoration: none;}
     .quote__organisation {font-size: 1.6rem;}}
 
 /* -------- Callouts -------- */
+.callout {
+    padding: 4rem;
+    border-radius: 5px;}
+.callout--primary {
+    background: var(--color-primary);
+    color: #fff;}
+.callout__body {text-align: center;}
+.callout__heading {
+    color: #fff;
+    margin-top: 0;
+    font-size: 3rem;}
+.callout .btn { /* in girds justify and align are by default stretch */
+    justify-self: center; /* horizontal */
+    align-self: center;} /* vertical */
+
+@media screen and (min-width: 768px) {
+
+    .callout .grid--1x2 {grid-template-columns: 1fr auto;} /*right column get column to fit it, left gets stretched */
+    .callout__body {text-align: left;}
+    .callout .btn {
+        justify-self: start;
+        margin: 0 2rem;}}
