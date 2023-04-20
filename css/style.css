@@ -219,6 +219,7 @@ a {text-decoration: none;}
 }
 
 /* -------- Subscription Plans -------- */
+.plan {margin-bottom: 4rem;}
 .plan__name {
     color: #fff;
     font-size: 2.4rem;
@@ -230,12 +231,22 @@ a {text-decoration: none;}
     font-weight: 300;
     opacity: 0.8;
     margin-right: 1rem;}
+.card--primary .badge--primary {background: #126DE4;}
 .card--secondary .badge--secondary {background: #02cdf1;}
 .plan__description {
     display: block;
     font-size: 2rem;
     font-weight: 300;}
 .plan .list__item {margin-bottom: 2rem;}
+.plan--popular .card__header {position: relative;}
+.plan--popular .card__header::before {
+    content: url(../images/popular.svg);
+    display: inline-block;
+    width: 40px; /*for width to work, display inline-block*/
+    position: absolute;
+    top: -3px;
+    right: 5%;
+}
 
 @media screen and (min-width: 1024px) {
 
