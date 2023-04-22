@@ -67,8 +67,7 @@ a {text-decoration: none;}
     font-weight: 600;
     padding: 0.5rem 2rem;
     white-space: nowrap; /*extends the line*/
-    transition: all 0.3s ease; /* Add this line for transition */
-}
+    transition: all 0.3s ease;} /* Add this line for transition */
 .badge--primary { /*BEM Convention: block__element--modifier: block--modifier*/
     background: var(--color-primary);
     color: #fff;}
@@ -281,6 +280,7 @@ a {text-decoration: none;}
 
 /* -------- Grids -------- */
 .grid {display: grid;}
+.grid--1x2 {gap: 4rem 5rem;}
 .grid--1x3 {gap: 2rem 5rem;}
     
 @media screen and (min-width: 768px) {
@@ -466,13 +466,20 @@ a {text-decoration: none;}
     font-weight: 600;
     margin: 0 auto;
     justify-items: center;
-    max-width: 700px;
-}
-
+    max-width: 700px;}
 
 @media screen and (min-width: 768px) {
 
     .block-domain__prices {
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    }
-}
+    }}
+
+/* -------- Features Block -------- */
+.features {
+    gap: 4rem 2rem;     /* to manage gap without media query, vertical horizontal */
+    margin: 6rem 0;} 
+.features__heading {margin: 1rem 0;}
+
+@media screen and (min-width: 768px) {
+    .features:nth-child(even) .features__content {
+    order: 2;}}
