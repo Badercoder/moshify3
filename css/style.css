@@ -221,7 +221,9 @@ a {text-decoration: none;}
     color: #fff;}
 
 /* -------- Subscription Plans -------- */
-.plan {margin-bottom: 4rem;}
+.plan {
+    margin-bottom: 4rem;
+    transition: transform 0.2s ease-out;}
 .plan__name {
     color: #fff;
     font-size: 2.4rem;
@@ -248,13 +250,23 @@ a {text-decoration: none;}
     position: absolute;
     top: -3px;
     right: 5%;}
+.plan:hover {
+    transform: scale(1.05);}
+.plan .card {
+    margin: 0 auto;
+    max-width: 500px;}
+    
 
 @media screen and (min-width: 1024px) {
 
     .plan__name {font-size: 1.4rem;}
     .plan__price {font-size: 5rem;}
     .plan__billing-cycle {font-size: 1.6rem;}
-    .plan__description {font-size: 1.7rem;}}
+    .plan__description {font-size: 1.7rem;}
+
+    .plan--popular {transform: scale(1.09);}
+    .plan--popular:hover {transform: scale(1.14);}}
+
 
 /* -------- Media Object -------- */
 .media {display: flex;}
@@ -269,14 +281,16 @@ a {text-decoration: none;}
 
 /* -------- Grids -------- */
 .grid {display: grid;}
-
+.grid--1x3 {gap: 2rem 5rem;}
+    
 @media screen and (min-width: 768px) {
 
     .grid--1x2 {grid-template-columns: repeat(2, 1fr); /* this means: all the avaiable space and divide it by 2*/
     }}
 @media screen and (min-width: 1024px) {
 
-    .grid--1x3 {grid-template-columns: repeat(3, 1fr);
+    .grid--1x3 {
+        grid-template-columns: repeat(3, 1fr);
     }}
 
 /* -------- Testimonials -------- */
