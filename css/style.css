@@ -30,7 +30,9 @@ h1, h2, h3 {
 
 h1 {font-size: 7rem;}
 h2 {font-size: 4rem;}
-h3 {font-size: 3rem;}
+h3 {
+    font-size: 3rem;
+    font-weight: 500;}
 p {margin: 0;}
 
 @media screen and (min-width: 1024px) {
@@ -90,14 +92,14 @@ a {text-decoration: none;}
 .list {
     list-style: none;
     padding-left: 0;
-    color: var(--color-headings);
     /* font-weight: bold; */ /* bold should be applied where required */}
 .list--inline .list__item {
     display: inline-block;
     margin-right: 2rem;}
 .list--tick {
     list-style-image: url(../images/tick.svg);
-    padding-left: 3rem;}
+    padding-left: 3rem;
+    color: var(--color-headings);}
 .list--tick .list__item { /*good use of nestting: both criteria has to be met*/
     padding-left: 0.5rem;
     margin-bottom: 1rem;}
@@ -268,7 +270,9 @@ a {text-decoration: none;}
 
 
 /* -------- Media Object -------- */
-.media {display: flex;}
+.media {
+    display: flex;
+    margin-bottom: 4rem;}
 .media__title {margin-top: 0;}
 .media__body {margin: 0 2rem;}
 .media__image {margin-top: 1rem;}
@@ -280,7 +284,6 @@ a {text-decoration: none;}
 
 /* -------- Grids -------- */
 .grid {display: grid;}
-.grid--1x2 {gap: 4rem 5rem;}
 .grid--1x3 {gap: 2rem 5rem;}
     
 @media screen and (min-width: 768px) {
@@ -389,13 +392,13 @@ a {text-decoration: none;}
     color: #7b858b;}
 .block--skewed-right {
     padding-bottom: calc(var(--padding-vertical) + 4rem);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);}
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);}
 .block--skewed-left {
     padding-bottom: calc(var(--padding-vertical) + 4rem);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);}
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);}
 .block__header {text-align: center;}
 .block__heading {margin-top: 0;}
-.block--dark .block__heading {color: #fff;}
+.block--dark h1, .block--dark h2, .block--dark h3 {color: #fff;}
 
 /* -------- Navigation Bar -------- */
 .nav {
@@ -438,7 +441,6 @@ a {text-decoration: none;}
     .nav__list-item {border: 0;}}
 
 /* -------- Hero Section -------- */
-.hero {clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);}
 .hero__tagline {
     font-size: 2rem;
     color: #b9c3cf;
@@ -477,9 +479,26 @@ a {text-decoration: none;}
 /* -------- Features Block -------- */
 .features {
     gap: 4rem 2rem;     /* to manage gap without media query, vertical horizontal */
-    margin: 6rem 0;} 
+    margin: 6rem 0;}
+.features:last-of-type {margin: 6rem 0 0;}
 .features__heading {margin: 1rem 0;}
 
 @media screen and (min-width: 768px) {
     .features:nth-child(even) .features__content {
     order: 2;}}
+
+/* -------- Showcase Block -------- */
+@media screen and (min-width: 768px) {
+
+    .block-showcase .grid  {grid-template-columns: 50% 50%;}
+    .block-showcase .image-container {
+        width: auto;
+        max-width: 700px;}
+    .block-showcase__image {
+        justify-self: end;
+        align-self: center;
+    }}
+@media screen and (min-width: 1140px) {
+
+    .block-showcase__image {align-self: normal;
+    }}
