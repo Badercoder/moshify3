@@ -297,7 +297,9 @@ a {text-decoration: none;}
     }}
 
 /* -------- Testimonials -------- */
-.testimonial {padding: 3rem;} /* padding from ites container */
+.testimonial {
+    margin-top: 4rem;
+    padding: 3rem;} /* padding from ites container */
 .testimonial__image {position: relative;} /* notice the relative positioning was not applied to the grid because the grid is a reusable component */
 .testimonial__image > img {width: 100%;} /*this property for the picture makes it responsive. BTW the height is automatically adjusted */
 .testimonial__image > .icon-container {
