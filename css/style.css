@@ -145,9 +145,7 @@ a {text-decoration: none;}
 .btn--outline:hover {
     background: var(--color-headings);
     color: #fff;}
-.btn--horizontal {
-    padding-left: 6rem;
-    padding-right: 6rem;}
+.btn--horizontal {padding-inline: 6rem;}
 .btn--primary {
     background: var(--color-primary);
     color: #fff;}
@@ -187,20 +185,17 @@ a {text-decoration: none;}
 .input-group .input { /* Good use of nestting, only input inside an input-group should not have borders*/
     border: 0;
     flex-grow: 1;
+    width: 0;
     padding: 1.5rem 2rem;}
 .input-group .btn {
     margin: 4px;
     padding: 2rem 2rem;}
 .input-group .icon-container {
-    display: none;
     margin: 4px;
     padding: 0 1rem;}
 
 @media screen and (min-width: 768px) {
     
-    .input-group .icon-container {
-        display: inline-flex;   
-       }
     .input-group .btn {
         padding: 0 6rem;
     }}
@@ -354,11 +349,14 @@ a {text-decoration: none;}
 
 @media screen and (min-width: 768px) {
 
+    .callout {padding-bottom: 6rem;}
     .callout .grid--1x2 {grid-template-columns: 1fr auto;} /*right column get column to fit it, left gets stretched */
     .callout__body {text-align: left;}
     .callout .btn {
         justify-self: start;
-        margin: 0 2rem;}}
+        margin: 0 2rem;}
+    .callout-signup {transform: translateY(5rem);
+    }}
 
 /* -------- Collapsibles -------- */
 .collapsible__header {
@@ -428,7 +426,9 @@ a {text-decoration: none;}
     opacity: 1;
     box-shadow: 0 0 0 3px #666;
     border-radius: 5px;}
-.nav__logo {transform: translateY(5px);}
+.nav__logo {
+    transform: translateY(5px);
+    width: 150px;}
 
 @media screen and (min-width: 768px) {
 
@@ -463,8 +463,9 @@ a {text-decoration: none;}
     margin: 4rem auto;
     max-width: 670px;}
 .block-domain__prices {
+    color: var(--color-headings);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 4rem);
     font-size: 2rem;
     font-weight: 600;
@@ -486,12 +487,16 @@ a {text-decoration: none;}
 .features__heading {margin: 1rem 0;}
 
 @media screen and (min-width: 768px) {
-    .features:nth-child(even) .features__content {
+
+    .features:nth-child(odd) .features__content {
     order: 2;}}
 
 /* -------- Showcase Block -------- */
 @media screen and (min-width: 768px) {
 
+    .block-showcase .block__header {
+        margin-top: 4rem;
+        margin-bottom: 5rem;}
     .block-showcase .grid  {grid-template-columns: 50% 50%;}
     .block-showcase .image-container {
         width: auto;
@@ -503,4 +508,41 @@ a {text-decoration: none;}
 @media screen and (min-width: 1140px) {
 
     .block-showcase__image {align-self: normal;
+    }}
+
+/* -------- Footer Block -------- */
+.footer {padding-top: 9rem;}
+.footer a {
+    color: #777;
+    transition: color 0.15s;}
+.footer a:hover {color: #fff;}
+.footer__section {
+    padding: 2rem;
+    border-bottom: 1px solid #393939;}
+.footer__section .list {margin: 0;}
+.footer__heading {
+    text-transform: uppercase;
+    font-weight: 600;}
+.footer__logo {
+    margin-top: 5rem;
+    text-align: center;}
+.footer__logo img {max-width: 230px;}
+.footer_copyright {
+    font-size: 2.1rem;
+    color: #fff;
+    opacity: 0.3;}
+
+@media screen and (min-width: 768px) {
+
+    .footer__sections {grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));}
+    .footer .collapsible__icon {display: none;}
+    .footer .collapsible__body {
+        max-height: 100%;
+        opacity: 1;}
+    .footer__logo {
+        margin-top: 1rem;
+        order: -1;}
+    .footer_copyright {font-size: 1.5rem;}
+    .footer__section {border: 0;}
+    .footer__heading {font-size: 1.6rem;
     }}
